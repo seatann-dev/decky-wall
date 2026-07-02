@@ -65,7 +65,7 @@ The wallpaper is embedded directly into `dist/index.js` (base64 for video, self-
 
 ## Usage
 
-1. On the **desktop side** (Bazzite desktop, or any PC with your WE wallpapers), open the **selector** in Chrome/Edge — either the hosted version at **https://seatann-dev.github.io/decky-wall/** or `index.html` from this repo.
+1. On the **desktop side** (Bazzite desktop, or any PC with your WE wallpapers), open the **selector** in Chrome/Edge — either the hosted version at **https://seatann-dev.github.io/decky-wall/** or `video-wallpaper-gallery.html` from this repo.
 2. Point it at your **Wallpaper Engine Workshop folder** and at your installed **Live Wallpaper** plugin folder (it remembers both).
 3. Pick a wallpaper → **Use this**. It bakes into the plugin (big videos show a streaming %).
 4. **Return to Game Mode.** It reloads the plugin and your wallpaper plays behind Home.
@@ -79,7 +79,7 @@ Known unknowns: the exact video-size ceiling on lower-RAM devices (the 289 MB re
 
 ## Building from source
 
-The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@decky/ui`, `@decky/rollup`). `pnpm i && pnpm build` produces `dist/index.js`. The selector (`index.html`, also hosted at https://seatann-dev.github.io/decky-wall/) is a single self-contained file — no build step.
+The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@decky/ui`, `@decky/rollup`). `pnpm i && pnpm build` produces `dist/index.js`. The selector (`video-wallpaper-gallery.html`, also hosted at https://seatann-dev.github.io/decky-wall/ as `index.html`) is a single self-contained file — no build step.
 
 ## Credits
 
