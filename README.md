@@ -20,19 +20,37 @@
 
 ---
 
-> **Heads up:** I built and tested this on a **ROG Xbox Ally X running Bazzite**, where Game Mode is the same gamescope + gamepad-UI + Decky stack as a Steam Deck. It works well there. I do **not** own a Steam Deck, so I can't verify real Deck hardware — testers very welcome (see [Testing](#testing-help-wanted)).
-
-## What it is
-
-Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky.wall puts a live wallpaper behind the **Game Mode** Home screen — the actual gamepad-UI background you see behind your game capsules — not the KDE desktop.
-
-You pick a Wallpaper Engine wallpaper **you already own** in a small desktop tool, it bakes the wallpaper into the plugin, and it plays behind Home. **Video wallpapers work reliably** for most videos; **web wallpapers are experimental** — many work, but not all (some don't yet).
-
-**It ships no wallpaper files.** The plugin only bakes wallpapers from *your own* Wallpaper Engine Workshop folder, on your own device. Nothing is redistributed.
-
 ## Demo
 
 ![Decky.wall demo — live wallpapers behind Game Mode Home](./Decky.wall_demo.gif)
+
+## What it is
+
+Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky.wall puts a live **Wallpaper Engine** wallpaper behind the **Game Mode** Home screen — the real gamepad-UI background you see behind your game capsules, not the KDE desktop. You pick a wallpaper **you already own**, it bakes into the plugin, and it plays behind your games.
+
+**Video wallpapers work reliably; web wallpapers are experimental** (many work, some don't yet). **It ships no wallpaper files** — it only bakes wallpapers from *your own* Workshop folder, on your own device. Open source (MIT).
+
+> **Heads up:** built and tested on a **ROG Xbox Ally X (Bazzite)** — the same Game Mode stack (gamescope + gamepad UI + Decky) as a Steam Deck. I do **not** own a Steam Deck, so I can't verify real Deck hardware — testers very welcome (see [Testing](#testing-help-wanted)).
+
+## Install
+
+1. Install **Wallpaper Engine** and let it download all the wallpapers you own.
+2. Download **`Live-Wallpaper-vX.Y.Z.zip`** from [Releases](../../releases).
+3. Download **`video-wallpaper-gallery.html`** and keep it on your desktop for quick access.
+4. Open **Big Picture mode** and install the zip via **Decky → ⚙ Developer → Install Plugin from ZIP**. *(A plain folder copy into `~/homebrew/plugins/` will not reliably work — use the ZIP installer.)*
+
+## Usage
+
+![How to use Decky.wall](./Decky.wall_howto.png)
+
+1. After the plugin installs, **close Big Picture mode** (go to the desktop).
+2. Open **`video-wallpaper-gallery.html`** in **Chrome or Edge** — *Firefox won't work*. **First time:** point it at your Wallpaper Engine Workshop folder and your installed **Live Wallpaper** plugin folder (it remembers both).
+3. **Choose the wallpaper** you want → **Use this**. It bakes into the plugin (big videos show a streaming %).
+4. **Go back to Gaming Mode** — your wallpaper plays behind Home.
+5. If it doesn't show up, open the **Live Wallpaper** plugin in the Quick Access Menu and hit **Reload wallpaper**.
+6. To change the wallpaper later: go to the desktop and **repeat from step 2**.
+
+*Tip: tweak Fit / Dim / Brightness / Zoom / Position — and **Reset position** — from the plugin's Quick Access Menu.*
 
 ## Features
 
@@ -51,30 +69,6 @@ Decky plugins run in Steam's shared JS context, which is **not** the visible Hom
 
 The wallpaper is embedded directly into `dist/index.js` (base64 for video, self-contained HTML for web). The desktop **selector** does the baking; for large videos it **streams** the file to disk in chunks instead of building one giant string in memory (which is what used to fail).
 
-## Requirements
-
-- A handheld/PC in **Steam Game Mode** with **Decky Loader** installed (Steam Deck, or Bazzite on other handhelds/PCs).
-- **Wallpaper Engine** (owned, on Steam) if you want to use Wallpaper Engine wallpapers — the selector reads your Workshop folder.
-- A **Chromium-based browser** (Chrome/Edge) on the desktop side to run the selector. *Firefox is not supported* — the selector uses the File System Access API, which Firefox lacks.
-
-## Install
-
-1. Download the latest `Live-Wallpaper-vX.Y.Z.zip` from [Releases](../../releases).
-2. On the device, open **Decky → ⚙ (settings) → Developer → enable Developer mode**.
-3. In the Developer tab, choose **Install Plugin from ZIP** and pick the zip.
-   *(A plain copy of the folder into `~/homebrew/plugins/` will not reliably work — use the ZIP installer.)*
-4. Open **Decky.wall** from the Quick Access Menu.
-
-## Usage
-
-![How to use Decky.wall](./Decky.wall_howto.png)
-
-1. On the **desktop side** (Bazzite desktop, or any PC with your Wallpaper Engine wallpapers), open the **selector** in Chrome/Edge — either the hosted version at **https://seatann-dev.github.io/decky-wall/** or `video-wallpaper-gallery.html` from this repo.
-2. Point it at your **Wallpaper Engine Workshop folder** and at your installed **Live Wallpaper** plugin folder (it remembers both).
-3. Pick a wallpaper → **Use this**. It bakes into the plugin (big videos show a streaming %).
-4. **Return to Game Mode.** It reloads the plugin and your wallpaper plays behind Home.
-5. Tweak Fit / Dim / Brightness / Zoom / Position from the Quick Access Menu; **Reset position** restores defaults.
-
 ## Testing (help wanted)
 
 I can't test real Steam Deck hardware. If you have a Deck (LCD or OLED) and are willing to flash a build and report what happens — whether it loads, whether video plays, battery impact, any crashes — that's the single most useful contribution. Open an issue with your hardware + what you saw.
@@ -83,4 +77,14 @@ Known unknowns: the exact video-size ceiling on lower-RAM devices (the 289 MB re
 
 ## Building from source
 
-The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@decky/ui`, `@decky/rollup`). `pnpm i && pnpm build` produces `dist/index.js`. The selector (`video-wallpaper-gallery.html`, also hosted at https://seatann-dev
+The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@decky/ui`, `@decky/rollup`). `pnpm i && pnpm build` produces `dist/index.js`. The selector (`video-wallpaper-gallery.html`, also hosted at https://seatann-dev.github.io/decky-wall/ as `index.html`) is a single self-contained file — no build step.
+
+## Credits
+
+- Built on [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) and the Decky plugin toolchain.
+- Wallpaper Engine and its wallpapers belong to their respective creators — this project bundles none of them.
+- By [seatann-dev](https://github.com/seatann-dev). I'm a hobbyist and a beginner; PRs, corrections, and smarter approaches are all welcome.
+
+## License
+
+[MIT](./LICENSE) © 2026 seatann-dev
