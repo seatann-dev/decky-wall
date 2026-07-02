@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="./Decky.wall_icon-256.png" alt="Decky.wall" width="120">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./Decky.wall_logo_ondark.png">
+    <img src="./Decky.wall_logo_onlight.png" alt="Decky.wall" width="120">
+  </picture>
 </p>
 
 <h1 align="center">Decky.wall</h1>
