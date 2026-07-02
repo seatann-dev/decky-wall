@@ -68,6 +68,8 @@ The wallpaper is embedded directly into `dist/index.js` (base64 for video, self-
 
 ## Usage
 
+![How to use Decky.wall](./Decky.wall_howto.png)
+
 1. On the **desktop side** (Bazzite desktop, or any PC with your WE wallpapers), open the **selector** in Chrome/Edge — either the hosted version at **https://seatann-dev.github.io/decky-wall/** or `video-wallpaper-gallery.html` from this repo.
 2. Point it at your **Wallpaper Engine Workshop folder** and at your installed **Live Wallpaper** plugin folder (it remembers both).
 3. Pick a wallpaper → **Use this**. It bakes into the plugin (big videos show a streaming %).
