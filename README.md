@@ -52,7 +52,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 *Tip: tweak Fit / Dim / Brightness / Zoom / Position — and **Reset position** — from the plugin's Quick Access Menu.*
 
-> 💡 **Want the see-through look from the demo?** Steam's Home panels are opaque by default. To let the wallpaper show through the UI like in the clip, also install **[CSS Loader](https://github.com/suchmememanyskill/SDH-CssLoader)** (a Decky plugin) and apply a **transparency theme**.
+> 💡 **Want the see-through look from the demo?** Steam's Home panels are opaque by default. To let the wallpaper show through the UI like in the clip, also install **[CSS Loader](https://github.com/suchmememanyskill/SDH-CssLoader)** (a Decky plugin).
 
 ## Features
 
