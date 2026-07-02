@@ -32,8 +32,7 @@ You pick a Wallpaper Engine wallpaper **you already own** in a small desktop too
 
 ## Demo
 
-<!-- TODO: drop a short screen recording / GIF here -->
-`(video coming — a clip of it running behind Home + swapping wallpapers in the selector)`
+![Decky.wall demo — live wallpapers behind Game Mode Home](./Decky.wall_demo.gif)
 
 ## Features
 
@@ -84,8 +83,4 @@ Known unknowns: the exact video-size ceiling on lower-RAM devices (the 289 MB re
 
 ## Building from source
 
-The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@decky/ui`, `@decky/rollup`). `pnpm i && pnpm build` produces `dist/index.js`. The selector (`video-wallpaper-gallery.html`, also hosted at https://seatann-dev.github.io/decky-wall/ as `index.html`) is a single self-contained file — no build step.
-
-## Credits
-
-- Built on [Decky Loader](https://github.com/SteamDeckHo
+The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@decky/ui`, `@decky/rollup`). `pnpm i && pnpm build` produces `dist/index.js`. The selector (`video-wallpaper-gallery.html`, also hosted at https://seatann-dev
