@@ -55,7 +55,7 @@ The wallpaper is embedded directly into `dist/index.js` (base64 for video, self-
 ## Requirements
 
 - A handheld/PC in **Steam Game Mode** with **Decky Loader** installed (Steam Deck, or Bazzite on other handhelds/PCs).
-- **Wallpaper Engine** (owned, on Steam) if you want to use WE wallpapers — the selector reads your Workshop folder.
+- **Wallpaper Engine** (owned, on Steam) if you want to use Wallpaper Engine wallpapers — the selector reads your Workshop folder.
 - A **Chromium-based browser** (Chrome/Edge) on the desktop side to run the selector. *Firefox is not supported* — the selector uses the File System Access API, which Firefox lacks.
 
 ## Install
@@ -70,7 +70,7 @@ The wallpaper is embedded directly into `dist/index.js` (base64 for video, self-
 
 ![How to use Decky.wall](./Decky.wall_howto.png)
 
-1. On the **desktop side** (Bazzite desktop, or any PC with your WE wallpapers), open the **selector** in Chrome/Edge — either the hosted version at **https://seatann-dev.github.io/decky-wall/** or `video-wallpaper-gallery.html` from this repo.
+1. On the **desktop side** (Bazzite desktop, or any PC with your Wallpaper Engine wallpapers), open the **selector** in Chrome/Edge — either the hosted version at **https://seatann-dev.github.io/decky-wall/** or `video-wallpaper-gallery.html` from this repo.
 2. Point it at your **Wallpaper Engine Workshop folder** and at your installed **Live Wallpaper** plugin folder (it remembers both).
 3. Pick a wallpaper → **Use this**. It bakes into the plugin (big videos show a streaming %).
 4. **Return to Game Mode.** It reloads the plugin and your wallpaper plays behind Home.
@@ -88,10 +88,4 @@ The plugin is TypeScript/React built with the Decky toolchain (`@decky/api`, `@d
 
 ## Credits
 
-- Built on [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) and the Decky plugin toolchain.
-- Wallpaper Engine and its wallpapers belong to their respective creators — this project bundles none of them.
-- By [seatann-dev](https://github.com/seatann-dev). I'm a hobbyist and a beginner; PRs, corrections, and smarter approaches are all welcome.
-
-## License
-
-[MIT](./LICENSE) © 2026 seatann-dev
+- Built on [Decky Loader](https://github.com/SteamDeckHo
