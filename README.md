@@ -26,7 +26,7 @@
 
 Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky.wall puts a live wallpaper behind the **Game Mode** Home screen — the actual gamepad-UI background you see behind your game capsules — not the KDE desktop.
 
-You pick a Wallpaper Engine wallpaper **you already own** in a small desktop tool, it bakes the wallpaper into the plugin, and it plays behind Home. Video wallpapers and many interactive web wallpapers both work.
+You pick a Wallpaper Engine wallpaper **you already own** in a small desktop tool, it bakes the wallpaper into the plugin, and it plays behind Home. **Video wallpapers work reliably** for most videos; **web wallpapers are experimental** — many work, but not all (some don't yet).
 
 **It ships no wallpaper files.** The plugin only bakes wallpapers from *your own* Wallpaper Engine Workshop folder, on your own device. Nothing is redistributed.
 
@@ -37,8 +37,8 @@ You pick a Wallpaper Engine wallpaper **you already own** in a small desktop too
 
 ## Features
 
-- 🎬 **Video wallpapers** — played full-screen behind Home.
-- 🌐 **Interactive web wallpapers** — wrapped in a self-contained frame with a small shim so their runtime assets and properties still load. (Got NIKKE's web wallpaper running this way.)
+- 🎬 **Video wallpapers** — played full-screen behind Home. Works reliably for most videos.
+- 🌐 **Interactive web wallpapers (experimental)** — wrapped in a self-contained frame with a small shim so their runtime assets and properties load. **Many work, but not all — support is hit-or-miss right now.** (NIKKE's web wallpaper works.)
 - 🧩 **Frontend-only** — no Python backend; everything lives in `dist/index.js`. Survives copy-only installs where the backend never runs.
 - 🪫 **Battery-aware** — FPS-capped, and **pauses when a game is running**.
 - 🎛️ **In-game controls** (Quick Access Menu) — Enable, Reload wallpaper, and for video: Fit, Dim, Brightness, Zoom, Position X/Y, and Reset position.
