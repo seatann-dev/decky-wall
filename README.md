@@ -39,6 +39,8 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 3. Download **`video-wallpaper-gallery.html`** and keep it on your desktop for quick access.
 4. Open **Big Picture mode** and install the zip via **Decky → ⚙ Developer → Install Plugin from ZIP**. *(A plain folder copy into `~/homebrew/plugins/` will not reliably work — use the ZIP installer.)*
 
+> 📄 **What's new:** see the [changelog](./CHANGELOG.md). Latest is **v2.4.2** (Steam Deck bug fixes).
+
 ## Usage
 
 ![How to use Decky.wall](./Decky.wall_howto.png)
