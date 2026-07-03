@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.2 — Silent wallpapers (2026-07-04)
+Bug-fix release (selector-only — re-bake to apply). No changes to core features.
+- **Wallpapers are now completely silent.** Video wallpapers were already muted; web wallpapers could play their own audio behind the Home screen. Every web wallpaper is now muted at bake time — HTML5 `<audio>`/`<video>`, `new Audio()`, and the Web Audio API are all silenced. A wallpaper never makes a sound.
+- Added a build-time guard so a web wallpaper cannot be baked without the audio mute in place.
+
 ## v3.0.1 — Per-game library reliability (2026-07-03)
 Bug-fix release. The plugin itself is unchanged; all fixes are in the desktop selector (rebake to apply).
 - **Fixed a crash when building a per-game library** — the selector wrote the library list using character positions but cut the file by byte positions, so a non-ASCII character earlier in the file corrupted `dist/index.js` and Decky failed to load (`SyntaxError: Unexpected token`). Now byte-accurate.
