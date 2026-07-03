@@ -1,5 +1,13 @@
 # Changelog
 
+## v3.0.1 — Per-game library reliability (2026-07-03)
+Bug-fix release. The plugin itself is unchanged; all fixes are in the desktop selector (rebake to apply).
+- **Fixed a crash when building a per-game library** — the selector wrote the library list using character positions but cut the file by byte positions, so a non-ASCII character earlier in the file corrupted `dist/index.js` and Decky failed to load (`SyntaxError: Unexpected token`). Now byte-accurate.
+- **Baking a Default wallpaper no longer wipes your library** — Default bakes now preserve the current per-game library instead of resetting it.
+- **Hardened web-wallpaper inlining** — inlined scripts containing `</script>` can no longer break the page.
+- **Safety guardrail** — the selector now syntax-checks every bake before writing; a bad bake fails on the desktop with a clear message instead of shipping a broken plugin to your device.
+- The desktop selector is now named **`live-wallpaper-selector.html`**.
+
 ## v3.0.0 — Per-game wallpapers (2026-07-03) 🎮
 The big one: **a different wallpaper behind each game.**
 - **Per-game library** — in the gallery, add several of your own wallpapers (video *or* web) to a library, then assign any of them to individual games right from the Quick Access Menu. Scroll Home and the background swaps to each game's wallpaper; unassigned games show your Default; **Off** shows the game's own art.
@@ -15,15 +23,4 @@ Fixes from Steam Deck tester reports 🙏
 
 ## v2.4.1 (2026-07-02)
 - **"Reset position"** button in the video controls (zoom → 100, X/Y → 0).
-- **Streaming bake** in the selector — large video wallpapers install without crashing the browser (the file is streamed to disk in chunks instead of built as one giant string). Confirmed working with a 289 MB video on a ROG Ally X.
-
-## v2.4.0 (2026-07-01)
-- Video controls added: **Zoom** and **Position X/Y** (alongside Fit / Dim / Brightness).
-- Quick Access panel: "Active wallpaper", Enabled, Reload wallpaper, Pause while playing.
-
-## v2.0 – v2.3.x
-- Unified **video + web** Wallpaper Engine baking into one frontend-only plugin (no Python backend; everything lives in `dist/index.js`).
-- Resilient mount that survives Steam's UI re-renders; **pauses when a game is running**; FPS-capped for battery.
-- Desktop selector to pick and bake a wallpaper you already own.
-
-> Scene (`.pkg`) wallpapers are not supported — they need Wallpaper Engine's own renderer. Video and web only.
+- **Streaming bake** in the selector — 
