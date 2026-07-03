@@ -46,7 +46,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 ![How to use Decky.wall](./Decky.wall_howto.png)
 
 1. After the plugin installs, **close Big Picture mode** (go to the desktop).
-2. Open **`video-wallpaper-gallery.html`** in **Chrome or Edge** — *Firefox won't work*. **First time:** point it at your Wallpaper Engine Workshop folder and your installed **Live Wallpaper** plugin folder (it remembers both).
+2. Open **`video-wallpaper-gallery.html`** in **Chrome or Edge** — *Firefox won't work*. **First time:** point it at your Wallpaper Engine Workshop folder and your installed **Live Wallpaper** plugin folder — on Bazzite/SteamOS that's `~/homebrew/plugins/Live Wallpaper` (it remembers both).
 3. **Choose the wallpaper** you want → **Use this**. It bakes into the plugin (big videos show a streaming %).
 4. **Go back to Gaming Mode** — your wallpaper plays behind Home.
 5. If it doesn't show up, open the **Live Wallpaper** plugin in the Quick Access Menu and hit **Reload wallpaper**.
