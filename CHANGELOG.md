@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.3 — Reset per-game assignments (2026-07-04)
+- **New "Reset per-game assignments" button** in the plugin's Quick Access Menu — clears all your per-game wallpaper choices in one tap for a clean slate (handy if any got stuck from earlier versions). Re-bake to get the button.
+
+> **Known limitation:** the **Wallpaper Engine app's own capsule** on Home won't show a wallpaper — it's an app, not a game, so it doesn't expose the standard background layer the plugin mounts onto. Every actual game works.
+
 ## v3.0.2 — Silent wallpapers (2026-07-04)
 Bug-fix release (selector-only — re-bake to apply). No changes to core features.
 - **Wallpapers are now completely silent.** Video wallpapers were already muted; web wallpapers could play their own audio behind the Home screen. Every web wallpaper is now muted at bake time — HTML5 `<audio>`/`<video>`, `new Audio()`, and the Web Audio API are all silenced. A wallpaper never makes a sound.

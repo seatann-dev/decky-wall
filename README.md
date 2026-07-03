@@ -42,7 +42,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.0.2** — wallpapers are now completely silent. See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.0.3** — adds a *Reset per-game assignments* button. See the [changelog](./CHANGELOG.md).
 
 ### 1 · One-time setup
 1. Install **Decky Loader** if you don't have it ([install guide](https://github.com/SteamDeckHomebrew/decky-loader#installation)).
@@ -94,34 +94,9 @@ Want a different wallpaper behind each game?
 2. Back in **Gaming Mode**, hover a game → open **Live Wallpaper** in the Quick Access Menu → use the **"Wallpaper for this game"** dropdown to pick **Default**, one of your library wallpapers, or **Off** (show the game's own art).
 3. Scroll Home — the background swaps to each game's assigned wallpaper. Everything else stays on your Default.
 
-Library wallpapers are stored as files inside the plugin, so adding one **doesn't** re-bake your big default.
+Library wallpapers are stored as files inside the plugin folder (`dist/wp/`) and served locally, so adding one doesn't re-bake your big Default wallpaper.
+**Assignments getting stuck?** Open **Live Wallpaper** in the Quick Access Menu and tap **Reset per-game assignments** to clear them all and start clean. *(New in v3.0.3 — re-bake to get the button.)*
 
-> 💡 **Want the see-through look from the demo?** Steam's Home panels are opaque by default. To let the wallpaper show through the UI like in the clip, also install **[CSS Loader](https://github.com/suchmememanyskill/SDH-CssLoader)** (a Decky plugin).
+## Good to know
 
-## Features
-
-- 🎮 **Per-game wallpapers (v3)** — build a library of your own wallpapers and assign a different one to each game; the background swaps as you scroll Home. Video and web both work.
-- 🎬 **Video wallpapers** — played full-screen behind Home. Works reliably for most videos.
-- 🌐 **Interactive web wallpapers (experimental)** — wrapped in a self-contained frame with a small shim so their runtime assets and properties load. **Many work, but not all — support is hit-or-miss right now.** (NIKKE's web wallpaper works.)
-- 🧩 **Frontend-only** — no Python backend; everything lives in `dist/index.js`. Survives copy-only installs where the backend never runs.
-- 🪫 **Battery-aware** — FPS-capped, and **pauses when a game is running**.
-- 🎛️ **In-game controls** (Quick Access Menu) — Enable, Reload wallpaper, and for video: Fit, Dim, Brightness, Zoom, Position X/Y, and Reset position.
-- 📦 **Streaming bake** — big video wallpapers install without crashing the browser; a 289 MB wallpaper installs and plays on my Ally X.
-
-> ⚠️ **Scene** (`.pkg`) wallpapers are **not** supported — they're a proprietary format. Video and web only.
-
-## Good to know (and a few warnings)
-
-- **It can't harm your system.** A Decky plugin is frontend-only — it runs inside the Steam UI and can't touch your files, audio drivers, or the OS. If anything ever looks wrong, just **toggle it off in the Decky Quick Access Menu** — you never need to reinstall your system.
-- **Reinstalling the plugin ZIP resets it.** The zip is a *blank* plugin, so reinstalling it clears your baked wallpaper and your per-game library (both live inside the plugin file). Just re-bake / re-add them. Updating only the **selector** doesn't touch the plugin.
-- **Web wallpapers are hit-or-miss.** Video is the reliable path. Some web wallpapers render black or only partly — if one doesn't work, try another, or use it as a per-game pick rather than your default. **Scene (`.pkg`) wallpapers don't work at all.**
-- **Big videos can be slow — or fail — on lower-RAM devices.** A 289 MB video works on my Ally X (24 GB RAM); a Steam Deck has less, so smaller/compressed videos are safer there.
-- **Wallpapers are completely silent** by design (as of v3.0.2) — no wallpaper will ever play sound.
-- **Battery:** it's FPS-capped and pauses while a game is running, but a live wallpaper still draws more power than a static background.
-- **This is a hobby project by a beginner.** It works well on my hardware, but use it at your own discretion — and please [open an issue](../../issues) if something breaks. 🙏
-
-## How it works (short version)
-
-Decky plugins run in Steam's shared JS context, which is **not** the visible Home window. Decky.wall enumerates the Steam documents, finds the real Home window and its full-screen background layer, and mounts an opaque video/iframe over it — then animates off *that* window's own `requestAnimationFrame`. Steam's UI re-renders and strips injected DOM, so the mount re-asserts itself (interval + MutationObserver) to stay put while you scroll between games.
-
-The wallpaper is embedded directly into `dist/index.js` (base64 for video, self-contained HTML for web). The desktop **
+- **The Wallpaper Engine app's own capsule won't show a wallpaper.** Wallpaper Engine is an *app*, not a game, so its Home tile doesn't have the standard background layer the plugin mounts wallpapers onto — so it stays on its own art no matter what you assign. This only affects that one tile; every actual game works normally.
