@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.0.0 — Per-game wallpapers (2026-07-03) 🎮
+The big one: **a different wallpaper behind each game.**
+- **Per-game library** — in the gallery, add several of your own wallpapers (video *or* web) to a library, then assign any of them to individual games right from the Quick Access Menu. Scroll Home and the background swaps to each game's wallpaper; unassigned games show your Default; **Off** shows the game's own art.
+- **Loaded from the plugin folder** — library wallpapers live as files in `dist/wp/` and are served locally (no re-baking your big default when you add one). Video and web both supported.
+- **Accurate focus detection** — the plugin reads the *actually-focused* game capsule instead of the lagging background image, so the right wallpaper shows with no off-by-one flicker.
+- Settings and saved tweaks are preserved.
+
 ## v2.4.2 — Deck bug fixes (2026-07-02)
 Fixes from Steam Deck tester reports 🙏
 - **Wallpaper no longer covers the Quick Access Menu / whole screen at boot** — the wallpaper layer's z-index was lowered so it stays *behind* the UI instead of painting over it.

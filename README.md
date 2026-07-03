@@ -39,7 +39,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 3. Download **`video-wallpaper-gallery.html`** and keep it on your desktop for quick access.
 4. Open **Big Picture mode** and install the zip via **Decky → ⚙ Developer → Install Plugin from ZIP**. *(A plain folder copy into `~/homebrew/plugins/` will not reliably work — use the ZIP installer.)*
 
-> 📄 **What's new:** see the [changelog](./CHANGELOG.md). Latest is **v2.4.2** (Steam Deck bug fixes).
+> 📄 **What's new:** see the [changelog](./CHANGELOG.md). Latest is **v3.0.0** — **per-game wallpapers** (a different wallpaper behind each game).
 
 ## Usage
 
@@ -54,10 +54,21 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 *Tip: tweak Fit / Dim / Brightness / Zoom / Position — and **Reset position** — from the plugin's Quick Access Menu.*
 
+### Per-game wallpapers (v3)
+
+Want a different wallpaper behind each game?
+
+1. In the gallery, click **＋ Library** on the wallpapers you want to use (video or web). They copy into the plugin and show up in a **Per-game library** list.
+2. Back in **Gaming Mode**, hover a game → open **Live Wallpaper** in the Quick Access Menu → use the **"Wallpaper for this game"** dropdown to pick **Default**, one of your library wallpapers, or **Off** (show the game's own art).
+3. Scroll Home — the background swaps to each game's assigned wallpaper. Everything else stays on your Default.
+
+Library wallpapers are stored as files inside the plugin, so adding one **doesn't** re-bake your big default.
+
 > 💡 **Want the see-through look from the demo?** Steam's Home panels are opaque by default. To let the wallpaper show through the UI like in the clip, also install **[CSS Loader](https://github.com/suchmememanyskill/SDH-CssLoader)** (a Decky plugin).
 
 ## Features
 
+- 🎮 **Per-game wallpapers (v3)** — build a library of your own wallpapers and assign a different one to each game; the background swaps as you scroll Home. Video and web both work.
 - 🎬 **Video wallpapers** — played full-screen behind Home. Works reliably for most videos.
 - 🌐 **Interactive web wallpapers (experimental)** — wrapped in a self-contained frame with a small shim so their runtime assets and properties load. **Many work, but not all — support is hit-or-miss right now.** (NIKKE's web wallpaper works.)
 - 🧩 **Frontend-only** — no Python backend; everything lives in `dist/index.js`. Survives copy-only installs where the backend never runs.
