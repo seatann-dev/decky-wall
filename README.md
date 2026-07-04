@@ -88,6 +88,8 @@ Save both somewhere easy to find (Desktop or Downloads).
 
 ### Per-game wallpapers (v3)
 
+![Per-game wallpapers — a different wallpaper behind each game](./Decky.wall_pergame_demo.gif)
+
 Want a different wallpaper behind each game?
 
 1. In the gallery, click **＋ Library** on the wallpapers you want to use (video or web). They copy into the plugin and show up in a **Per-game library** list.
