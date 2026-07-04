@@ -32,6 +32,16 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 > **Heads up:** built and tested on a **ROG Xbox Ally X (Bazzite)** — the same Game Mode stack (gamescope + gamepad UI + Decky) as a Steam Deck. I do **not** own a Steam Deck, so I can't verify real Deck hardware — testers very welcome (see [Testing](#testing-help-wanted)).
 
+### How this differs from the KDE Wallpaper Engine plugin
+
+If you've looked into live wallpapers on Linux, you've probably seen [`catsout/wallpaper-engine-kde-plugin`](https://github.com/catsout/wallpaper-engine-kde-plugin). It's a genuinely good project and worth using — but it solves a **different** problem, and the two aren't interchangeable:
+
+- **It's for the KDE _desktop_.** It renders wallpapers on your Plasma desktop, not in Steam Game Mode. If what you want is a live background behind your **game capsules** on the handheld Home screen, that's this plugin, not that one.
+- **It's a deeper system integration.** It hooks into the KDE compositor, which is powerful but means a broken wallpaper can affect your desktop session — some users report needing to recover it manually. That's the trade-off of desktop-compositor integration, not a knock on the project.
+- **Decky.wall is deliberately shallow and disposable.** It's **frontend-only** — it draws into Steam's own UI layer and touches nothing at the system, driver, or compositor level. There's an **Enabled** toggle in the Quick Access Menu, and turning it off removes the wallpaper instantly. Worst case is a wallpaper that doesn't render; it can't take down your session.
+
+Short version: **use the KDE plugin for your desktop, use this for Game Mode.** They can happily coexist.
+
 ## ⚠️ Before you start — please read
 
 - **This only works in Steam _Game Mode_ on Bazzite or SteamOS** (a Steam Deck, or a handheld like the ROG Ally running **Bazzite**). Decky plugins run on the Linux / Game-Mode side, so **it does _not_ run on Windows.** If you dual-boot, do everything below on the **Bazzite** side.
