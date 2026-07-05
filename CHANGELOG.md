@@ -1,5 +1,8 @@
 # Changelog
 
+## v3.0.4 — Smooth per-game crossfade (2026-07-04)
+- **Per-game wallpaper switching is now a smooth crossfade.** When you scroll between games that have different wallpapers, the video dissolves in place instead of flashing — no black blink. Turning a game's wallpaper **Off** cleanly shows that game's own art. Re-bake to apply (the plugin engine changed this time).
+
 ## v3.0.3 — Reset per-game assignments (2026-07-04)
 - **New "Reset per-game assignments" button** in the plugin's Quick Access Menu — clears all your per-game wallpaper choices in one tap for a clean slate (handy if any got stuck from earlier versions). Re-bake to get the button.
 
