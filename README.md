@@ -52,7 +52,7 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.0.4** — smooth per-game wallpaper crossfade (no flash when switching). See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.0.5** — new Status-pill toggle + restyled top-left status pill, and the selector now opens in the Steam theme. See the [changelog](./CHANGELOG.md).
 
 ### 1 · One-time setup
 1. Install **Decky Loader** if you don't have it ([install guide](https://github.com/SteamDeckHomebrew/decky-loader#installation)).

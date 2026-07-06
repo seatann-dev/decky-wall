@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.0.5 — Status pill + Steam-themed selector (2026-07-06)
+- **New "Status pill" toggle** in the Quick Access Menu — hide the on-screen status popup entirely. Turning it off removes the pill immediately (the diagnostic box still appears if the wallpaper ever fails to mount, so you can still troubleshoot).
+- **Restyled pill** — the status pill is now a small, always-on readout pinned to the **top-left** corner (compact white, square corners) instead of a large centered pill that faded after a few seconds. It stays put so you can glance at the active wallpaper / focus / on–off state anytime.
+- **Selector opens in the Steam theme by default** — the desktop gallery/selector now defaults to the Steam-blue look (was light). Cosmetic only; you can still switch to light or dark.
+- Re-bake to apply (the plugin engine changed). **No settings reset** — your saved tweaks and per-game library are preserved.
+
 ## v3.0.4 — Smooth per-game crossfade (2026-07-04)
 - **Per-game wallpaper switching is now a smooth crossfade.** When you scroll between games that have different wallpapers, the video dissolves in place instead of flashing — no black blink. Turning a game's wallpaper **Off** cleanly shows that game's own art. Re-bake to apply (the plugin engine changed this time).
 
