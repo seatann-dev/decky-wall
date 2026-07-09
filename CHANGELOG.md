@@ -1,9 +1,17 @@
 # Changelog
 
+## v3.0.6 — Fix: hero bleed-through + faster first load (2026-07-09)
+- **Fixed game background art showing through the wallpaper on some games.** Games with custom artwork or non-Steam-game shortcuts can have *two* hero-image layers stacked; the plugin only hid one, so the second painted over your wallpaper. Now every game hero image is disabled while a wallpaper is active — no more bleed-through. Also clears the "Wallpaper Engine capsule shows no wallpaper" case.
+- Capsule tiles, icons, and logos are untouched — only the full-screen hero art is hidden, and only while a wallpaper is on.
+- **Faster first appearance after a reload.** The baked video is now decoded early at startup and cached, instead of being processed only once the background slot is found — so the wallpaper shows sooner.
+- Lighter, too: the hero hide is a single CSS rule instead of a per-frame scan.
+- Re-bake to apply (the plugin engine changed). **No settings reset** — saved tweaks and per-game library preserved.
+
 ## v3.0.5 — Status pill + Steam-themed selector (2026-07-06)
 - **New "Status pill" toggle** in the Quick Access Menu — hide the on-screen status popup entirely. Turning it off removes the pill immediately (the diagnostic box still appears if the wallpaper ever fails to mount, so you can still troubleshoot).
 - **Restyled pill** — the status pill is now a small, always-on readout pinned to the **top-left** corner (compact white, square corners) instead of a large centered pill that faded after a few seconds. It stays put so you can glance at the active wallpaper / focus / on–off state anytime.
 - **Selector opens in the Steam theme by default** — the desktop gallery/selector now defaults to the Steam-blue look (was light). Cosmetic only; you can still switch to light or dark.
+- **The desktop selector is now named `video-wallpaper-selector.html`** (was `live-wallpaper-selector.html`). One consistent name everywhere — same tool.
 - Re-bake to apply (the plugin engine changed). **No settings reset** — your saved tweaks and per-game library are preserved.
 
 ## v3.0.4 — Smooth per-game crossfade (2026-07-04)

@@ -52,7 +52,7 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.0.5** — new Status-pill toggle + restyled top-left status pill, and the selector now opens in the Steam theme. See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.0.6** — fixes game background art bleeding through the wallpaper (custom/second hero layers) and loads the wallpaper faster after a reload. See the [changelog](./CHANGELOG.md).
 
 ### 1 · One-time setup
 1. Install **Decky Loader** if you don't have it ([install guide](https://github.com/SteamDeckHomebrew/decky-loader#installation)).
@@ -62,7 +62,7 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 ### 2 · Download the two files
 From the **[latest release](../../releases/latest)**, download:
 - **`Live-Wallpaper-vX.Y.Z.zip`** — the plugin.
-- **`live-wallpaper-selector.html`** — the desktop tool you bake wallpapers with.
+- **`video-wallpaper-selector.html`** — the desktop tool you bake wallpapers with.
 
 Save both somewhere easy to find (Desktop or Downloads).
 
@@ -74,7 +74,7 @@ Save both somewhere easy to find (Desktop or Downloads).
 
 ### 4 · Bake your first wallpaper (in Desktop mode)
 1. Switch to **Desktop mode** (**Steam button → Power → Switch to Desktop**).
-2. Open **`live-wallpaper-selector.html`** in **Chrome / Edge / Brave** (not Firefox).
+2. Open **`video-wallpaper-selector.html`** in **Chrome / Edge / Brave** (not Firefox).
 3. The first time, it asks for **two folders** — click each and grant access:
    - **Wallpaper Engine Workshop folder** — usually `~/.local/share/Steam/steamapps/workshop/content/431960` *(read)*.
    - **Your plugin folder** — `~/homebrew/plugins/Live Wallpaper` *(read/write)*.
