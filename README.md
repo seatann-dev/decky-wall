@@ -95,8 +95,9 @@ Save both somewhere easy to find (Desktop or Downloads).
 - **Change your wallpaper:** go to Desktop mode, open the selector, pick a new one → **Use this**, then return to Game Mode. (Same as install step 4.)
 - **Tweak the look without re-baking:** open the **Live Wallpaper** plugin in the Quick Access Menu — Fit, Dim, Brightness, Zoom, Position X/Y, and **Reset position** for video.
 - **Turn it off / on:** the **Enabled** toggle in the same menu. (Turning it off instantly removes the wallpaper — handy if anything ever looks off.)
+- **Hide the status pill:** the **Status pill** toggle in the same menu turns off the small on-screen readout.
 
-### Per-game wallpapers (v3)
+### Per-game wallpapers
 
 ![Per-game wallpapers — a different wallpaper behind each game](./Decky.wall_pergame_demo.gif)
 
@@ -106,9 +107,14 @@ Want a different wallpaper behind each game?
 2. Back in **Gaming Mode**, hover a game → open **Live Wallpaper** in the Quick Access Menu → use the **"Wallpaper for this game"** dropdown to pick **Default**, one of your library wallpapers, or **Off** (show the game's own art).
 3. Scroll Home — the background swaps to each game's assigned wallpaper. Everything else stays on your Default.
 
-Library wallpapers are stored as files inside the plugin folder (`dist/wp/`) and served locally, so adding one doesn't re-bake your big Default wallpaper.
-**Assignments getting stuck?** Open **Live Wallpaper** in the Quick Access Menu and tap **Reset per-game assignments** to clear them all and start clean. *(New in v3.0.3 — re-bake to get the button.)*
+Both your Default and your library wallpapers are stored as files inside the plugin folder (`dist/wp/`) and streamed locally — so they start quickly (even large videos), and adding a library wallpaper never re-bakes your Default.
+
+**Assignments getting stuck?** Open **Live Wallpaper** in the Quick Access Menu and tap **Reset per-game assignments** to clear them all and start clean.
 
 ## Good to know
 
 - **The Wallpaper Engine app's own capsule won't show a wallpaper.** Wallpaper Engine is an *app*, not a game, so its Home tile doesn't have the standard background layer the plugin mounts wallpapers onto — so it stays on its own art no matter what you assign. This only affects that one tile; every actual game works normally.
+
+## Testing (help wanted)
+
+I only have a **ROG Xbox Ally X on Bazzite** to test on. If you run an actual **Steam Deck** — or another handheld on Bazzite/SteamOS — and try this, I'd love to hear how it went: what worked, what didn't, and anything that looked off. Open an issue; even a quick "works on mine" helps.
