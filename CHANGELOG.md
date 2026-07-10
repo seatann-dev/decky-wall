@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.7 — Large videos load fast now (2026-07-09)
+- **Big speed-up for large video wallpapers.** Baked videos used to be embedded whole and had to be fully decoded before anything showed — slow, and large ones could fail to load. Now the selector writes your baked video as a real file and the plugin **streams** it locally (the same way the per-game library already worked), so it starts almost immediately, even for large videos. **Re-bake with the updated selector to get this.**
+- Rolls in the v3.0.6 fixes (hero bleed-through + the earlier large-video load failure).
+- No settings reset.
+
 ## v3.0.6 — Fix: hero bleed-through + faster first load (2026-07-09)
 - **Fixed game background art showing through the wallpaper on some games.** Games with custom artwork or non-Steam-game shortcuts can have *two* hero-image layers stacked; the plugin only hid one, so the second painted over your wallpaper. Now every game hero image is disabled while a wallpaper is active — no more bleed-through. Also clears the "Wallpaper Engine capsule shows no wallpaper" case.
 - Capsule tiles, icons, and logos are untouched — only the full-screen hero art is hidden, and only while a wallpaper is on.

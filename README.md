@@ -52,7 +52,7 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.0.6** — fixes game background art bleeding through the wallpaper (custom/second hero layers) and loads the wallpaper faster after a reload. See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.0.7** — big speed-up for large video wallpapers (baked videos now stream from a file instead of loading whole). Includes the v3.0.6 hero bleed-through fix. **Re-bake with the updated selector to get the speed-up.** See the [changelog](./CHANGELOG.md).
 
 ### 1 · One-time setup
 1. Install **Decky Loader** if you don't have it ([install guide](https://github.com/SteamDeckHomebrew/decky-loader#installation)).
