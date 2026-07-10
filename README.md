@@ -15,7 +15,7 @@
 <p align="center">
   <img alt="license" src="https://img.shields.io/badge/license-MIT-blue">
   <img alt="status" src="https://img.shields.io/badge/works%20on-ROG%20Ally%20X%20(Bazzite)-brightgreen">
-  <img alt="deck" src="https://img.shields.io/badge/Steam%20Deck-untested%2C%20testers%20wanted-orange">
+  <img alt="deck" src="https://img.shields.io/badge/Steam%20Deck%20OLED-confirmed%20working-brightgreen">
 </p>
 
 ---
