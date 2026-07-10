@@ -30,7 +30,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 **Video wallpapers work reliably; web wallpapers are experimental** (many work, some don't yet). **It ships no wallpaper files** — it only bakes wallpapers from *your own* Workshop folder, on your own device. Open source (MIT).
 
-> **Heads up:** built and tested on a **ROG Xbox Ally X (Bazzite)** — the same Game Mode stack (gamescope + gamepad UI + Decky) as a Steam Deck. I do **not** own a Steam Deck, so I can't verify real Deck hardware — testers very welcome (see [Testing](#testing-help-wanted)).
+> **Heads up:** built and tested on a **ROG Xbox Ally X (Bazzite)** — the same Game Mode stack (gamescope + gamepad UI + Decky) as a Steam Deck. I don't own a Steam Deck myself, but a user has **confirmed it working on a Steam Deck OLED** — more testers still welcome (see [Testing](#testing-help-wanted)).
 
 ### How this differs from the KDE Wallpaper Engine plugin
 
@@ -53,6 +53,8 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 ## Install & first wallpaper (step by step)
 
 > 📄 Latest version: **v3.0.7** — big speed-up for large video wallpapers (baked videos now stream from a file instead of loading whole). Includes the v3.0.6 hero bleed-through fix. **Re-bake with the updated selector to get the speed-up.** See the [changelog](./CHANGELOG.md).
+
+> 📺 **Prefer to watch?** A community walkthrough by **NotAGameAddict** covers the whole setup on a Steam Deck OLED: [How to Use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU). *(Not made by me — external video, so it may change over time.)*
 
 ### 1 · One-time setup
 1. Install **Decky Loader** if you don't have it ([install guide](https://github.com/SteamDeckHomebrew/decky-loader#installation)).
@@ -117,4 +119,4 @@ Both your Default and your library wallpapers are stored as files inside the plu
 
 ## Testing (help wanted)
 
-I only have a **ROG Xbox Ally X on Bazzite** to test on. If you run an actual **Steam Deck** — or another handheld on Bazzite/SteamOS — and try this, I'd love to hear how it went: what worked, what didn't, and anything that looked off. Open an issue; even a quick "works on mine" helps.
+I only have a **ROG Xbox Ally X on Bazzite** to test on. It's been **confirmed working on a Steam Deck OLED** by a user (thank you!) — but the more real-hardware reports, the better. If you run a **Steam Deck** or another handheld on Bazzite/SteamOS, I'd love to hear how it went: what worked, what didn't, and anything that looked off. Open an issue; even a quick "works on mine" helps.
