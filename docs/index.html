@@ -195,12 +195,12 @@
    if(!wpHandle) return; if(!(await permEnsure(wpHandle,'read'))) return;
    if(window.LWshowcase)window.LWshowcase(true);
    gallery.innerHTML='<div class="empty"><span class="spin"></span><b>Scanning…</b>reading your wallpapers</div>'; objUrls.forEach(u=>URL.revokeObjectURL(u)); objUrls.length=0;
-   const cards=[];
+   const cards=[]; let sceneSkipped=0;
    try{
      for await (const [name,h] of wpHandle.entries()){
        if(h.kind!=='directory') continue;
        let meta; try{ const pj=await h.getFileHandle('project.json'); meta=JSON.parse(await (await pj.getFile()).text()); }catch{ continue; }
-       const type=String(meta.type||'').toLowerCase(); if(type!=='video'&&type!=='web') continue;
+       const type=String(meta.type||'').toLowerCase(); if(type!=='video'&&type!=='web'){ if(type==='scene')sceneSkipped++; continue; }
        let prevH=null; for(const pn of [meta.preview,'preview.gif','preview.jpg','preview.png','preview.webp']){ if(!pn)continue; try{prevH=await h.getFileHandle(pn);break;}catch{} }
        cards.push({id:name,title:meta.title||name,type,dirH:h,meta,prevH});
      }
@@ -208,6 +208,7 @@
    gallery.innerHTML=''; if(!cards.length){ gallery.innerHTML='<div class="empty warn"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><b>No video or web wallpapers here</b>Scene-type wallpapers are not supported.</div>'; return; }
    cards.sort((a,b)=>a.type.localeCompare(b.type)||a.title.localeCompare(b.title));
    if(window.LWshowcase)window.LWshowcase(false);
+   if(sceneSkipped>0){ const _sn=document.createElement('div'); _sn.style.cssText='grid-column:1/-1;padding:8px 12px;margin-bottom:2px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--mut);font-size:13px;line-height:1.5'; _sn.innerHTML='<b class="warn">'+sceneSkipped+' Scene wallpaper'+(sceneSkipped>1?'s':'')+' hidden</b> \u2014 Scene type isn\'t supported yet. Use <b>Video</b> or <b>Web</b> wallpapers.'; gallery.appendChild(_sn); }
    for(const c of cards){
      const tile=document.createElement('div');tile.className='tile';
      let thumbInner='<div class="ph"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M4 18l5-5 4 4 3-3 4 4"/></svg></div>';
