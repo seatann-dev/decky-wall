@@ -18,6 +18,12 @@
   <img alt="deck" src="https://img.shields.io/badge/Steam%20Deck%20OLED-confirmed%20working-brightgreen">
 </p>
 
+<p align="center">
+  <img alt="video wallpapers" src="https://img.shields.io/badge/video%20wallpapers-supported-brightgreen">
+  <img alt="web wallpapers" src="https://img.shields.io/badge/web%20wallpapers-partial-yellow">
+  <img alt="scene wallpapers" src="https://img.shields.io/badge/scene%20wallpapers-not%20supported-red">
+</p>
+
 ---
 
 ## Demo
@@ -28,7 +34,7 @@
 
 Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky.wall puts a live **Wallpaper Engine** wallpaper behind the **Game Mode** Home screen — the real gamepad-UI background you see behind your game capsules, not the KDE desktop. You pick a wallpaper **you already own**, it bakes into the plugin, and it plays behind your games.
 
-**Video wallpapers work reliably; web wallpapers are experimental** (many work, some don't yet). **It ships no wallpaper files** — it only bakes wallpapers from *your own* Workshop folder, on your own device. Open source (MIT).
+**Video wallpapers work reliably. Web wallpapers are experimental** (many work, some don't yet). **Scene wallpapers aren't supported** — only Video and Web can be baked, and the picker will tell you if it skips any Scene ones. It ships no wallpaper files of its own — it only bakes wallpapers from *your own* Workshop folder, on your own device. Open source (MIT).
 
 > **Heads up:** built and tested on a **ROG Xbox Ally X (Bazzite)** — the same Game Mode stack (gamescope + gamepad UI + Decky) as a Steam Deck. I don't own a Steam Deck myself, but a user has **confirmed it working on a Steam Deck OLED** — more testers still welcome (see [Testing](#testing-help-wanted)).
 
@@ -52,7 +58,7 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.0.7** — big speed-up for large video wallpapers (baked videos now stream from a file instead of loading whole). Includes the v3.0.6 hero bleed-through fix. **Re-bake with the updated selector to get the speed-up.** See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.0.8** — the picker now flags **Scene** wallpapers it skips (they aren't supported), so newly-downloaded ones that don't appear finally make sense. Selector-only — just re-open it, no re-install. (v3.0.7 brought the big large-video speed-up — baked videos now stream from a file.) See the [changelog](./CHANGELOG.md).
 
 > 📺 **Prefer to watch?** A community walkthrough by **NotAGameAddict** covers the whole setup on a Steam Deck OLED: [How to Use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU). *(Not made by me — external video, so it may change over time.)*
 

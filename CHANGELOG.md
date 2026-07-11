@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.0.8 — Scene wallpapers are flagged, not silently hidden (2026-07-09)
+Selector-only — no re-install needed, just re-open the selector.
+- **The picker now tells you when it skips Scene wallpapers.** Scene-type wallpapers aren't supported (only Video and Web are), and the picker used to just hide them — so if you downloaded new Scene wallpapers, they'd quietly not show up and it looked like a refresh/cache bug. Now a note at the top of the gallery says how many were hidden and why.
+- No plugin change; the `.zip` is v3.0.7 with a version bump.
+
 ## v3.0.7 — Large videos load fast now (2026-07-09)
 - **Big speed-up for large video wallpapers.** Baked videos used to be embedded whole and had to be fully decoded before anything showed — slow, and large ones could fail to load. Now the selector writes your baked video as a real file and the plugin **streams** it locally (the same way the per-game library already worked), so it starts almost immediately, even for large videos. **Re-bake with the updated selector to get this.**
 - Rolls in the v3.0.6 fixes (hero bleed-through + the earlier large-video load failure).
