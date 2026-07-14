@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.1.0 — Web wallpapers now folder-served + Video/Web/Scene tabs (2026-07-12)
+- **Web wallpapers render far more reliably.** A web wallpaper now serves its whole folder locally and mounts the real files, instead of squashing everything into one inlined file. Complex web wallpapers — module scripts, workers, saved-page sites, heavy asset folders — that used to show black now render. The old inline method stays as an automatic fallback.
+- **Per-game web wallpapers get the same treatment** — interactive/complex ones (e.g. generative-art wallpapers) now work when assigned to individual games too.
+- **New Video / Web / Scene tabs** in the picker so you can see what type each wallpaper is at a glance. Scene wallpapers are shown but stay unsupported (only Video and Web can be baked).
+- **Web options** (in the Web tab): optional *fake audio* (drive a visualizer) and *fake mouse* (auto-animate interactive wallpapers), plus **bundle a music track** that plays behind Home and makes visualizers react to it.
+- **Cold-boot fix:** the wallpaper now appears on its own when you enter Game Mode from a cold boot, instead of staying blank until you toggle it once. (Confirmed on a real power-cycle.)
+- **Re-bake your wallpaper** to get this build. **No settings reset** — saved tweaks and per-game library are preserved.
+
+> **Known issue (not the plugin):** re-baking several times in one session can make Decky vanish from the Quick Access Menu — a [Decky Loader bug](https://github.com/SteamDeckHomebrew/decky-loader/issues/799) with Desktop↔Game-Mode reloads that affects any plugin (it happens even with a do-nothing build). Restart Steam or `sudo systemctl restart plugin_loader` to recover. Normal single-bake use is unaffected. See the README.
+
 ## v3.0.8 — Scene wallpapers are flagged, not silently hidden (2026-07-09)
 Selector-only — no re-install needed, just re-open the selector.
 - **The picker now tells you when it skips Scene wallpapers.** Scene-type wallpapers aren't supported (only Video and Web are), and the picker used to just hide them — so if you downloaded new Scene wallpapers, they'd quietly not show up and it looked like a refresh/cache bug. Now a note at the top of the gallery says how many were hidden and why.

@@ -40,13 +40,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 ### How this differs from the KDE Wallpaper Engine plugin
 
-If you've looked into live wallpapers on Linux, you've probably seen [`catsout/wallpaper-engine-kde-plugin`](https://github.com/catsout/wallpaper-engine-kde-plugin). It's a genuinely good project and worth using — but it solves a **different** problem, and the two aren't interchangeable:
-
-- **It's for the KDE _desktop_.** It renders wallpapers on your Plasma desktop, not in Steam Game Mode. If what you want is a live background behind your **game capsules** on the handheld Home screen, that's this plugin, not that one.
-- **It's a deeper system integration.** It hooks into the KDE compositor, which is powerful but means a broken wallpaper can affect your desktop session — some users report needing to recover it manually. That's the trade-off of desktop-compositor integration, not a knock on the project.
-- **Decky.wall is deliberately shallow and disposable.** It's **frontend-only** — it draws into Steam's own UI layer and touches nothing at the system, driver, or compositor level. There's an **Enabled** toggle in the Quick Access Menu, and turning it off removes the wallpaper instantly. Worst case is a wallpaper that doesn't render; it can't take down your session.
-
-Short version: **use the KDE plugin for your desktop, use this for Game Mode.** They can happily coexist.
+[`catsout/wallpaper-engine-kde-plugin`](https://github.com/catsout/wallpaper-engine-kde-plugin) does the **KDE desktop**; Decky.wall does **Steam Game Mode** (behind your game capsules). Use the KDE plugin for your desktop, this for Game Mode — they coexist.
 
 ## ⚠️ Before you start — please read
 
@@ -58,7 +52,7 @@ Short version: **use the KDE plugin for your desktop, use this for Game Mode.** 
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.0.8** — the picker now flags **Scene** wallpapers it skips (they aren't supported), so newly-downloaded ones that don't appear finally make sense. Selector-only — just re-open it, no re-install. (v3.0.7 brought the big large-video speed-up — baked videos now stream from a file.) See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.1.0** — web wallpapers now **serve their whole folder locally** and mount the real files, so complex ones that used to show black now render (inline is kept as an automatic fallback). New **Video / Web / Scene tabs** in the picker, and **Web options** (fake audio, fake mouse, and a music track that plays behind Home and drives visualizers). Re-bake your web wallpaper to switch it over — no settings reset. See the [changelog](./CHANGELOG.md).
 
 > 📺 **Prefer to watch?** A community walkthrough by **NotAGameAddict** covers the whole setup on a Steam Deck OLED: [How to Use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU). *(Not made by me — external video, so it may change over time.)*
 
@@ -122,6 +116,16 @@ Both your Default and your library wallpapers are stored as files inside the plu
 ## Good to know
 
 - **The Wallpaper Engine app's own capsule won't show a wallpaper.** Wallpaper Engine is an *app*, not a game, so its Home tile doesn't have the standard background layer the plugin mounts wallpapers onto — so it stays on its own art no matter what you assign. This only affects that one tile; every actual game works normally.
+
+## Known issue — Decky disappearing after re-baking several times
+
+If you switch between **Desktop and Game Mode many times in one session** (for example, re-baking a few different wallpapers back-to-back), the **Decky plug icon can vanish** from the Quick Access Menu.
+
+**This isn't the plugin.** It's a [known Decky Loader bug](https://github.com/SteamDeckHomebrew/decky-loader/issues/799) with reloading plugins on Desktop↔Game-Mode switches — it happens with *any* plugin, and it still happens even with this wallpaper turned off. I chased it hard: even a build that paints nothing at all triggers it, so it's Decky's reload, not the wallpaper.
+
+**Normal use isn't affected** — installing once and baking a single wallpaper works every time. It only shows up under rapid re-baking.
+
+**To recover if it happens:** restart Steam (Steam → Power → Restart), or from Desktop run `sudo systemctl restart plugin_loader`. To change wallpapers several times in a row, restart Steam between bakes.
 
 ## Testing (help wanted)
 
