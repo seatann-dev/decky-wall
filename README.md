@@ -52,7 +52,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.1.0** — web wallpapers now **serve their whole folder locally** and mount the real files, so complex ones that used to show black now render (inline is kept as an automatic fallback). New **Video / Web / Scene tabs** in the picker, and **Web options** (fake audio, fake mouse, and a music track that plays behind Home and drives visualizers). Re-bake your web wallpaper to switch it over — no settings reset. See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.2.0** — a **thumbnail wallpaper picker right in the Quick Access Menu**, so you can switch among your library wallpapers **inside Game Mode** (tap a thumbnail → the Home background swaps live, no Desktop trip). Set a **Home default** or a **per-game** wallpaper from the picker, and your **settings now persist across a restart** (Home default, per-game, and the look sliders are saved on-device — this also fixes Quick Access tweaks resetting). Re-bake with the updated selector — no settings reset. See the [changelog](./CHANGELOG.md).
 
 > 📺 **Prefer to watch?** A community walkthrough by **NotAGameAddict** covers the whole setup on a Steam Deck OLED: [How to Use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU). *(Not made by me — external video, so it may change over time.)*
 
@@ -94,7 +94,8 @@ Save both somewhere easy to find (Desktop or Downloads).
 
 ![How to use Decky.wall](./Decky.wall_howto.png)
 
-- **Change your wallpaper:** go to Desktop mode, open the selector, pick a new one → **Use this**, then return to Game Mode. (Same as install step 4.)
+- **Switch wallpapers without leaving Game Mode:** open **Live Wallpaper** in the Quick Access Menu and tap a **thumbnail** in the picker — the Home background swaps live. Use the toggle to set your **Home default** or the wallpaper for the **current game**. (This only switches among wallpapers already in your library; adding new ones still uses the desktop selector.)
+- **Add a new wallpaper (or change your library):** go to Desktop mode, open the selector, pick one → **Use this** / **＋ Library**, then return to Game Mode. (Same as install step 4.)
 - **Tweak the look without re-baking:** open the **Live Wallpaper** plugin in the Quick Access Menu — Fit, Dim, Brightness, Zoom, Position X/Y, and **Reset position** for video.
 - **Turn it off / on:** the **Enabled** toggle in the same menu. (Turning it off instantly removes the wallpaper — handy if anything ever looks off.)
 - **Hide the status pill:** the **Status pill** toggle in the same menu turns off the small on-screen readout.

@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.2.0 — In-Game-Mode wallpaper picker + settings that persist (2026-07-14)
+- **Switch wallpapers from inside Game Mode.** The plugin's Quick Access panel now shows a **thumbnail picker** of your library wallpapers — tap one and the Home background swaps live, no Desktop trip and no re-bake. (Loading *new* wallpapers still uses the desktop selector once; day-to-day switching is now instant and in-place.)
+- **Set a Home default from the picker**, and keep per-game assignments — a toggle chooses whether a tap sets your Home default or the wallpaper for the focused game.
+- **Your settings now survive a restart.** Home default, per-game assignments, and the look sliders (dim, brightness, zoom, position) are saved on-device and restored on launch. This also fixes the long-standing issue where Quick Access tweaks reset after switching modes.
+- **Thumbnails** are generated automatically when you add a wallpaper to your library (a poster frame for video, the wallpaper's own preview for web).
+- **Re-bake with the updated selector to get this.** No settings reset. *(First launch after upgrading: set your Home default and per-game once more — earlier picks weren't truly saved by older builds.)*
+
 ## v3.1.0 — Web wallpapers now folder-served + Video/Web/Scene tabs (2026-07-12)
 - **Web wallpapers render far more reliably.** A web wallpaper now serves its whole folder locally and mounts the real files, instead of squashing everything into one inlined file. Complex web wallpapers — module scripts, workers, saved-page sites, heavy asset folders — that used to show black now render. The old inline method stays as an automatic fallback.
 - **Per-game web wallpapers get the same treatment** — interactive/complex ones (e.g. generative-art wallpapers) now work when assigned to individual games too.
