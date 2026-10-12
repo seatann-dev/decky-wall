@@ -9,7 +9,7 @@
 
 <p align="center">
   Run your own <b>Wallpaper Engine</b> wallpapers behind the Steam <b>Game Mode</b> Home screen.<br>
-  A frontend-only <a href="https://github.com/SteamDeckHomebrew/decky-loader">Decky Loader</a> plugin.
+  A <a href="https://github.com/SteamDeckHomebrew/decky-loader">Decky Loader</a> plugin.
 </p>
 
 <p align="center">
@@ -52,7 +52,7 @@ Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky
 
 ## Install & first wallpaper (step by step)
 
-> 📄 Latest version: **v3.2.0** — a **thumbnail wallpaper picker right in the Quick Access Menu**, so you can switch among your library wallpapers **inside Game Mode** (tap a thumbnail → the Home background swaps live, no Desktop trip). Set a **Home default** or a **per-game** wallpaper from the picker, and your **settings now persist across a restart** (Home default, per-game, and the look sliders are saved on-device — this also fixes Quick Access tweaks resetting). Re-bake with the updated selector — no settings reset. See the [changelog](./CHANGELOG.md).
+> 📄 Latest version: **v3.2.1** — reliability + smoothness update: the wallpaper appears right away when you enter Game Mode (even on shortcut tiles), no longer restarts when you scroll between games, a new **Per-game wallpapers** toggle (turn it off for one wallpaper everywhere — the smoothest option), your library can no longer be wiped by a bake, a failed bake keeps your current wallpaper, settings are protected if the backend is slow at boot, and web wallpapers are now truly silent. Re-bake with the updated selector — no settings reset. See the [changelog](./CHANGELOG.md).
 
 > 📺 **Prefer to watch?** A community walkthrough by **NotAGameAddict** covers the whole setup on a Steam Deck OLED: [How to Use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU). *(Not made by me — external video, so it may change over time.)*
 
@@ -78,7 +78,7 @@ Save both somewhere easy to find (Desktop or Downloads).
 1. Switch to **Desktop mode** (**Steam button → Power → Switch to Desktop**).
 2. Open **`video-wallpaper-selector.html`** in **Chrome / Edge / Brave** (not Firefox).
 3. The first time, it asks for **two folders** — click each and grant access:
-   - **Wallpaper Engine Workshop folder** — usually `~/.local/share/Steam/steamapps/workshop/content/431960` *(read)*.
+   - **Wallpaper Engine Workshop folder** — usually `~/.local/share/Steam/steamapps/workshop/content/431960` *(read)*. If Wallpaper Engine is installed on an **SD card**, it's in that card's Steam library instead, e.g. `/run/media/<you>/<card>/steamapps/workshop/content/431960`.
    - **Your plugin folder** — `~/homebrew/plugins/Live Wallpaper` *(read/write)*.
 
    It remembers both, so you only do this once.
@@ -97,6 +97,7 @@ Save both somewhere easy to find (Desktop or Downloads).
 - **Switch wallpapers without leaving Game Mode:** open **Live Wallpaper** in the Quick Access Menu and tap a **thumbnail** in the picker — the Home background swaps live. Use the toggle to set your **Home default** or the wallpaper for the **current game**. (This only switches among wallpapers already in your library; adding new ones still uses the desktop selector.)
 - **Add a new wallpaper (or change your library):** go to Desktop mode, open the selector, pick one → **Use this** / **＋ Library**, then return to Game Mode. (Same as install step 4.)
 - **Tweak the look without re-baking:** open the **Live Wallpaper** plugin in the Quick Access Menu — Fit, Dim, Brightness, Zoom, Position X/Y, and **Reset position** for video.
+- **One wallpaper everywhere:** turn off **Per-game wallpapers** in the same menu — every game shows your Home wallpaper and the picker tiles change that one wallpaper. Turn it back on and your per-game choices return.
 - **Turn it off / on:** the **Enabled** toggle in the same menu. (Turning it off instantly removes the wallpaper — handy if anything ever looks off.)
 - **Hide the status pill:** the **Status pill** toggle in the same menu turns off the small on-screen readout.
 

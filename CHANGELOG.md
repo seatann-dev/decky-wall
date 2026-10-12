@@ -1,5 +1,18 @@
 # Changelog
 
+## v3.2.1 — Smoother scrolling, safer bakes, truly silent web wallpapers (2026-10-12)
+- **The wallpaper now appears right away when you enter Game Mode**, even if Home opens on a tile with no background art (non-Steam shortcuts, emulators, launchers) — no more moving left/right to "wake it up".
+- **No more restart/flicker when scrolling between games.** The wallpaper keeps playing when Steam swaps a game's background art, and identical wallpapers never reload.
+- **New "Per-game wallpapers" toggle** in the Quick Access Menu. Off = one wallpaper everywhere (smoothest); the picker tiles then change that one wallpaper. On = per-game as before.
+- **Your per-game library can no longer be wiped by a bake** — the selector re-reads the library from the plugin before every change, and loads it as soon as the page opens.
+- **A failed bake keeps your current wallpaper** — the new one is written first, the old one is removed only after the switch succeeds.
+- **Settings are protected at boot** — if the backend answers slowly, nothing is saved until your real settings have loaded, so they can't be overwritten with defaults. Changes you make in the meantime are kept.
+- **Quick Access sliders show your saved values right after a restart.** "Reset per-game assignments" now survives a restart.
+- **Web wallpapers are truly silent** (the previous mute didn't take effect for folder-served wallpapers). Background-music mode still plays.
+- Pause-in-game is respected when the wallpaper swaps during a game; less background work (battery) while a game runs; picker tiles no longer confuse the focused-game detection.
+- Safer selector: wallpaper titles and file names are handled safely, large web wallpapers can be your Home default, one bake at a time, thumbnails refresh, removing a library item also removes its thumbnail, and a broken wallpaper folder no longer empties the gallery.
+- **Re-bake with the updated selector to get this.** No settings reset. (Installing the new zip is optional — it hardens the on-device settings saver; reinstalling a plugin replaces its folder, so re-add your library after.)
+
 ## v3.2.0 — In-Game-Mode wallpaper picker + settings that persist (2026-07-14)
 - **Switch wallpapers from inside Game Mode.** The plugin's Quick Access panel now shows a **thumbnail picker** of your library wallpapers — tap one and the Home background swaps live, no Desktop trip and no re-bake. (Loading *new* wallpapers still uses the desktop selector once; day-to-day switching is now instant and in-place.)
 - **Set a Home default from the picker**, and keep per-game assignments — a toggle chooses whether a tap sets your Home default or the wallpaper for the focused game.
