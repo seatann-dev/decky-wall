@@ -1,0 +1,15 @@
+name: General feedback
+description: Thoughts, praise, a cool setup to show off — anything that isn't a bug.
+labels: ["feedback"]
+body:
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your feedback
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device (optional)
+      placeholder: "Steam Deck OLED"

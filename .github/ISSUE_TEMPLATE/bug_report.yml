@@ -1,0 +1,69 @@
+name: Bug report
+description: Something doesn't work — the wallpaper doesn't show, a bake fails, Quick Access acts up.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time! A photo of the screen helps a lot.
+        Tip: restarting Steam fixes a missing Decky icon after several Desktop ↔ Game Mode switches (a known Decky bug).
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Bake a video wallpaper
+        2. Switch to Game Mode
+        3. ...
+  - type: input
+    id: version
+    attributes:
+      label: Decky.wall version
+      description: Shown on the selector page and in the plugin's package.json.
+      placeholder: "3.2.2"
+    validations:
+      required: true
+  - type: dropdown
+    id: device
+    attributes:
+      label: Device
+      options:
+        - Steam Deck (LCD)
+        - Steam Deck (OLED)
+        - ROG Ally / Ally X
+        - Legion Go
+        - Desktop / TV PC
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS and version
+      placeholder: "Bazzite 43, SteamOS 3.7, Windows 11 (Decky for Windows)…"
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Wallpaper type
+      options:
+        - Video
+        - Web
+        - Not sure / both
+  - type: input
+    id: browser
+    attributes:
+      label: Browser used for the selector (if the problem is in the selector)
+      placeholder: "Chrome 141 on Bazzite"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (optional)
+      description: "In Desktop Mode, run: journalctl -u plugin_loader --since \"10 min ago\" | grep -i wallpaper"
+      render: text
