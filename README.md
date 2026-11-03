@@ -1,134 +1,133 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./Decky.wall_logo_ondark.png">
-    <img src="./Decky.wall_logo_onlight.png" alt="Decky.wall" width="120">
-  </picture>
+  <img src="./Decky.wall_logo_motion.svg" alt="Decky.wall" width="140">
 </p>
 
 <h1 align="center">Decky.wall</h1>
 
 <p align="center">
-  Run your own <b>Wallpaper Engine</b> wallpapers behind the Steam <b>Game Mode</b> Home screen.<br>
+  Your own <b>Wallpaper Engine</b> wallpapers, playing behind the Steam <b>Game Mode</b> Home screen.<br>
   A <a href="https://github.com/SteamDeckHomebrew/decky-loader">Decky Loader</a> plugin.
 </p>
 
 <p align="center">
+  <a href="../../releases/latest"><img alt="latest release" src="https://img.shields.io/github/v/release/seatann-dev/decky-wall?label=download&color=4c9ede"></a>
   <img alt="license" src="https://img.shields.io/badge/license-MIT-blue">
-  <img alt="status" src="https://img.shields.io/badge/works%20on-ROG%20Ally%20X%20(Bazzite)-brightgreen">
-  <img alt="deck" src="https://img.shields.io/badge/Steam%20Deck%20OLED-confirmed%20working-brightgreen">
+  <img alt="Game Mode" src="https://img.shields.io/badge/Steam-Game%20Mode-1b2838">
 </p>
 
 <p align="center">
-  <img alt="video wallpapers" src="https://img.shields.io/badge/video%20wallpapers-supported-brightgreen">
-  <img alt="web wallpapers" src="https://img.shields.io/badge/web%20wallpapers-partial-yellow">
-  <img alt="scene wallpapers" src="https://img.shields.io/badge/scene%20wallpapers-not%20supported-red">
+  <a href="#quick-start"><b>Quick start</b></a> ·
+  <a href="#everyday-use"><b>Everyday use</b></a> ·
+  <a href="#troubleshooting"><b>Troubleshooting</b></a> ·
+  <a href="../../issues/new/choose"><b>Report a problem</b></a>
 </p>
 
----
+![Decky.wall demo: live wallpapers behind the Game Mode Home screen](./Decky.wall_demo.gif)
 
-## Demo
+## At a glance
 
-![Decky.wall demo — live wallpapers behind Game Mode Home](./Decky.wall_demo.gif)
+| | Details |
+|---|---|
+| **Where it plays** | Behind the Steam **Game Mode** Home screen (the gamepad UI, not the KDE desktop) |
+| **Wallpapers** | 🎬 **Video**: works &nbsp;·&nbsp; 🌐 **Web**: experimental, many work &nbsp;·&nbsp; 🎨 **Scene**: not supported |
+| **You need** | [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) · Wallpaper Engine with wallpapers you own · Chrome, Edge, Brave or Vivaldi (not Firefox) |
+| **Tested on** | ROG Xbox Ally X (Bazzite): by me · Steam Deck OLED: confirmed by a user · Decky for Windows: reported working by a user, untested by me |
+| **Your files** | Ships no wallpapers. It only bakes ones from *your own* Workshop folder, on your own device. Open source (MIT) |
 
-## What it is
+> **Coming in v3.2.2:** the wallpaper steps aside on a game's page (Steam's art shows), a **Wallpaper on all games** switch for "only my favourite games", search and list view in the selector, and a one-click **Report a problem** link. [Changelog](./CHANGELOG.md)
 
-Every "live wallpaper on Steam Deck" answer out there is **desktop mode**. Decky.wall puts a live **Wallpaper Engine** wallpaper behind the **Game Mode** Home screen — the real gamepad-UI background you see behind your game capsules, not the KDE desktop. You pick a wallpaper **you already own**, it bakes into the plugin, and it plays behind your games.
+## Quick start
 
-**Video wallpapers work reliably. Web wallpapers are experimental** (many work, some don't yet). **Scene wallpapers aren't supported** — only Video and Web can be baked, and the picker will tell you if it skips any Scene ones. It ships no wallpaper files of its own — it only bakes wallpapers from *your own* Workshop folder, on your own device. Open source (MIT).
+You do steps 1–3 once. After that, changing wallpaper is only step 4.
 
-> **Heads up:** built and tested on a **ROG Xbox Ally X (Bazzite)** — the same Game Mode stack (gamescope + gamepad UI + Decky) as a Steam Deck. I don't own a Steam Deck myself, but a user has **confirmed it working on a Steam Deck OLED** — more testers still welcome (see [Testing](#testing-help-wanted)).
+1. **Set up Decky** *(Game Mode)*<br>
+   Install [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader#installation), then turn on **Developer mode**: **⋯ Quick Access → Decky (plug icon) → ⚙ Settings → General → Developer mode ON**.
+2. **Download two files** from the [latest release](../../releases/latest)
+   - `Live-Wallpaper-vX.Y.Z.zip`: the plugin
+   - `video-wallpaper-selector.html`: the tool you pick wallpapers with
+3. **Install the plugin** *(Game Mode)*<br>
+   **⋯ → Decky → ⚙ Settings → Developer → Install Plugin from ZIP File** → pick the zip. *Install from the ZIP; a copied folder often won't load.*
+4. **Pick a wallpaper** *(Desktop Mode)*<br>
+   Open `video-wallpaper-selector.html` in Chrome / Edge / Brave, choose your two folders once, then click **Use this** on any wallpaper.
+   <details>
+   <summary>Where are the two folders?</summary>
 
-### How this differs from the KDE Wallpaper Engine plugin
+   | Folder | Usual path |
+   |---|---|
+   | Wallpaper Engine Workshop *(read)* | `~/.local/share/Steam/steamapps/workshop/content/431960` |
+   | On an SD card | `/run/media/<you>/<card>/steamapps/workshop/content/431960` |
+   | Flatpak Steam | `~/.var/app/com.valvesoftware.Steam/.local/share/Steam/steamapps/workshop/content/431960` |
+   | The plugin *(read/write)* | `~/homebrew/plugins/Live Wallpaper` |
 
-[`catsout/wallpaper-engine-kde-plugin`](https://github.com/catsout/wallpaper-engine-kde-plugin) does the **KDE desktop**; Decky.wall does **Steam Game Mode** (behind your game capsules). Use the KDE plugin for your desktop, this for Game Mode — they coexist.
+   `431960` is Wallpaper Engine's Steam app ID; Steam names the folder after it. The selector remembers both folders.
+   </details>
+5. **Go back to Game Mode.** The plugin reloads and your wallpaper plays behind Home.<br>
+   Nothing showing? **⋯ → Decky → Live Wallpaper → Reload wallpaper.**
 
-## ⚠️ Before you start — please read
-
-- **This only works in Steam _Game Mode_ on Bazzite or SteamOS** (a Steam Deck, or a handheld like the ROG Ally running **Bazzite**). Decky plugins run on the Linux / Game-Mode side, so **it does _not_ run on Windows.** If you dual-boot, do everything below on the **Bazzite** side.
-- You need **[Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader)** installed. This is a plugin *for* Decky.
-- You need **Wallpaper Engine** installed (from Steam) with the wallpapers you own already downloaded.
-- The desktop tool needs a **Chromium browser — Chrome, Edge, Brave, or Vivaldi. Firefox will _not_ work** (no File System Access API).
-- **Use only wallpapers you own.** This plugin ships no wallpaper files — it just bakes your own.
-
-## Install & first wallpaper (step by step)
-
-> 📄 Latest version: **v3.2.1** — reliability + smoothness update: the wallpaper appears right away when you enter Game Mode (even on shortcut tiles), no longer restarts when you scroll between games, a new **Per-game wallpapers** toggle (turn it off for one wallpaper everywhere — the smoothest option), your library can no longer be wiped by a bake, a failed bake keeps your current wallpaper, settings are protected if the backend is slow at boot, and web wallpapers are now truly silent. Re-bake with the updated selector — no settings reset. See the [changelog](./CHANGELOG.md).
-
-> 📺 **Prefer to watch?** A community walkthrough by **NotAGameAddict** covers the whole setup on a Steam Deck OLED: [How to Use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU). *(Not made by me — external video, so it may change over time.)*
-
-### 1 · One-time setup
-1. Install **Decky Loader** if you don't have it ([install guide](https://github.com/SteamDeckHomebrew/decky-loader#installation)).
-2. Turn on **Developer mode** in Decky: in **Game Mode**, press the **⋯ Quick Access** button → the **plug icon (Decky)** → **⚙ Settings** → **General** → toggle **Developer mode ON**. *(This unlocks "Install from ZIP".)*
-3. Install **Wallpaper Engine** from Steam and let it finish downloading the wallpapers you subscribed to.
-
-### 2 · Download the two files
-From the **[latest release](../../releases/latest)**, download:
-- **`Live-Wallpaper-vX.Y.Z.zip`** — the plugin.
-- **`video-wallpaper-selector.html`** — the desktop tool you bake wallpapers with.
-
-Save both somewhere easy to find (Desktop or Downloads).
-
-### 3 · Install the plugin (in Game Mode)
-1. Press **⋯ Quick Access** → **Decky (plug icon)** → **⚙ Settings** → **Developer** tab → **Install Plugin from ZIP File**.
-2. Pick `Live-Wallpaper-vX.Y.Z.zip`. **"Live Wallpaper"** should now show up in your Decky plugin list.
-
-> ⚠️ Install from the **ZIP** — don't just copy the folder into `~/homebrew/plugins/`. A plain copy often won't load.
-
-### 4 · Bake your first wallpaper (in Desktop mode)
-1. Switch to **Desktop mode** (**Steam button → Power → Switch to Desktop**).
-2. Open **`video-wallpaper-selector.html`** in **Chrome / Edge / Brave** (not Firefox).
-3. The first time, it asks for **two folders** — click each and grant access:
-   - **Wallpaper Engine Workshop folder** — usually `~/.local/share/Steam/steamapps/workshop/content/431960` *(read)*. If Wallpaper Engine is installed on an **SD card**, it's in that card's Steam library instead, e.g. `/run/media/<you>/<card>/steamapps/workshop/content/431960`.
-   - **Your plugin folder** — `~/homebrew/plugins/Live Wallpaper` *(read/write)*.
-
-   It remembers both, so you only do this once.
-4. Pick a wallpaper → click **Use this**. Big videos show a **%** while they bake.
-
-### 5 · See it
-1. Switch back to **Game Mode** — returning reloads the plugin, and your wallpaper plays behind the Home screen.
-2. Nothing showing? Open **⋯ → Decky → Live Wallpaper → Reload wallpaper**.
-
-**That's it.** To change your wallpaper later, go back to Desktop mode and repeat **step 4**.
+> 📺 Prefer video? **NotAGameAddict** made a full walkthrough on a Steam Deck OLED: [How to use Wallpaper Engine wallpapers in Gaming Mode](https://youtu.be/ToB_G86eptU) *(community video)*.
 
 ## Everyday use
 
-![How to use Decky.wall](./Decky.wall_howto.png)
+Everything below is in **⋯ Quick Access → Live Wallpaper**. Nothing needs a re-bake.
 
-- **Switch wallpapers without leaving Game Mode:** open **Live Wallpaper** in the Quick Access Menu and tap a **thumbnail** in the picker — the Home background swaps live. Use the toggle to set your **Home default** or the wallpaper for the **current game**. (This only switches among wallpapers already in your library; adding new ones still uses the desktop selector.)
-- **Add a new wallpaper (or change your library):** go to Desktop mode, open the selector, pick one → **Use this** / **＋ Library**, then return to Game Mode. (Same as install step 4.)
-- **Tweak the look without re-baking:** open the **Live Wallpaper** plugin in the Quick Access Menu — Fit, Dim, Brightness, Zoom, Position X/Y, and **Reset position** for video.
-- **One wallpaper everywhere:** turn off **Per-game wallpapers** in the same menu — every game shows your Home wallpaper and the picker tiles change that one wallpaper. Turn it back on and your per-game choices return.
-- **Turn it off / on:** the **Enabled** toggle in the same menu. (Turning it off instantly removes the wallpaper — handy if anything ever looks off.)
-- **Hide the status pill:** the **Status pill** toggle in the same menu turns off the small on-screen readout.
+| I want to… | Do this |
+|---|---|
+| Switch wallpaper without leaving Game Mode | Tap a thumbnail in the picker (wallpapers already in your library) |
+| Give each game its own wallpaper | See [Per-game wallpapers](#per-game-wallpapers) |
+| Use one wallpaper everywhere (smoothest) | Turn **Per-game wallpapers** off |
+| Show wallpapers only on games I pick | Turn **Wallpaper on all games** off *(coming in v3.2.2)* |
+| Adjust the look | Fit, Dim, Brightness, Zoom, Position X/Y, Reset position |
+| Turn it off for a moment | **Enabled** toggle |
+| Hide the small status readout | **Status pill** toggle |
 
-### Per-game wallpapers
+**Adding new wallpapers** still happens on the desktop: open the selector → **Use this** (your main wallpaper) or **＋ Library** (for per-game use) → back to Game Mode.
 
-![Per-game wallpapers — a different wallpaper behind each game](./Decky.wall_pergame_demo.gif)
+## Per-game wallpapers
 
-Want a different wallpaper behind each game?
+![Per-game wallpapers: a different wallpaper behind each game](./Decky.wall_pergame_demo.gif)
 
-1. In the gallery, click **＋ Library** on the wallpapers you want to use (video or web). They copy into the plugin and show up in a **Per-game library** list.
-2. Back in **Gaming Mode**, hover a game → open **Live Wallpaper** in the Quick Access Menu → use the **"Wallpaper for this game"** dropdown to pick **Default**, one of your library wallpapers, or **Off** (show the game's own art).
-3. Scroll Home — the background swaps to each game's assigned wallpaper. Everything else stays on your Default.
+1. In the selector, click **＋ Library** on each wallpaper you want available.
+2. In Game Mode, highlight a game → **Live Wallpaper → Wallpaper for this game** → pick one, **Default**, or **Off**.
+3. Scroll Home; the background follows the highlighted game.
 
-Both your Default and your library wallpapers are stored as files inside the plugin folder (`dist/wp/`) and streamed locally — so they start quickly (even large videos), and adding a library wallpaper never re-bakes your Default.
+Library wallpapers live in the plugin folder (`dist/wp/`) and stream locally, so even big videos start fast. **Reset per-game assignments** clears everything if things get stuck.
 
-**Assignments getting stuck?** Open **Live Wallpaper** in the Quick Access Menu and tap **Reset per-game assignments** to clear them all and start clean.
+## Troubleshooting
 
-## Good to know
+<details>
+<summary><b>The Decky icon vanished after switching Desktop ↔ Game Mode a few times</b></summary>
 
-- **The Wallpaper Engine app's own capsule won't show a wallpaper.** Wallpaper Engine is an *app*, not a game, so its Home tile doesn't have the standard background layer the plugin mounts wallpapers onto — so it stays on its own art no matter what you assign. This only affects that one tile; every actual game works normally.
+A [known Decky Loader bug](https://github.com/SteamDeckHomebrew/decky-loader/issues/799) with reloading plugins; it happens with any plugin, even with this one painting nothing. Restart Steam (**Steam → Power → Restart**) or run `sudo systemctl restart plugin_loader`. If you re-bake several times in a row, restart Steam between bakes.
+</details>
 
-## Known issue — Decky disappearing after re-baking several times
+<details>
+<summary><b>No wallpaper shows</b></summary>
 
-If you switch between **Desktop and Game Mode many times in one session** (for example, re-baking a few different wallpapers back-to-back), the **Decky plug icon can vanish** from the Quick Access Menu.
+Open **Live Wallpaper → Reload wallpaper**. Check **Enabled** is on, and, if you turned **Wallpaper on all games** off (v3.2.2+), that this game has a wallpaper picked. Still nothing? [Report it](../../issues/new?template=bug_report.yml) with a photo of the screen.
+</details>
 
-**This isn't the plugin.** It's a [known Decky Loader bug](https://github.com/SteamDeckHomebrew/decky-loader/issues/799) with reloading plugins on Desktop↔Game-Mode switches — it happens with *any* plugin, and it still happens even with this wallpaper turned off. I chased it hard: even a build that paints nothing at all triggers it, so it's Decky's reload, not the wallpaper.
+<details>
+<summary><b>A web wallpaper looks wrong or stays black</b></summary>
 
-**Normal use isn't affected** — installing once and baking a single wallpaper works every time. It only shows up under rapid re-baking.
+Web support is experimental: some wallpapers rely on Wallpaper Engine features a browser doesn't have. Try **Customize** in the selector, or pick a video wallpaper.
+</details>
 
-**To recover if it happens:** restart Steam (Steam → Power → Restart), or from Desktop run `sudo systemctl restart plugin_loader`. To change wallpapers several times in a row, restart Steam between bakes.
+<details>
+<summary><b>The Wallpaper Engine tile itself never gets a wallpaper</b></summary>
 
-## Testing (help wanted)
+Expected. Wallpaper Engine is an app, not a game, so its tile has no background layer to sit behind. Every real game works normally.
+</details>
 
-I only have a **ROG Xbox Ally X on Bazzite** to test on. It's been **confirmed working on a Steam Deck OLED** by a user (thank you!) — but the more real-hardware reports, the better. If you run a **Steam Deck** or another handheld on Bazzite/SteamOS, I'd love to hear how it went: what worked, what didn't, and anything that looked off. Open an issue; even a quick "works on mine" helps.
+<details>
+<summary><b>Do I need this or the KDE Wallpaper Engine plugin?</b></summary>
+
+[`catsout/wallpaper-engine-kde-plugin`](https://github.com/catsout/wallpaper-engine-kde-plugin) does the **KDE desktop**; Decky.wall does **Game Mode**. They work side by side.
+</details>
+
+## Feedback & testing
+
+Found a bug, have an idea, or just want to say it works on your device? **[Open an issue](../../issues/new/choose)**: there are short forms for bugs, ideas and general feedback. Reports from Steam Deck LCD, Legion Go and other handhelds are especially welcome.
+
+---
+
+<p align="center"><a href="./CHANGELOG.md">Changelog</a> · MIT License · Made by <a href="https://github.com/seatann-dev">seatann-dev</a></p>
