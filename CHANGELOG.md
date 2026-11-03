@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.2.2 — Wallpaper only where you want it, cleaner game pages, easier feedback (2026-11-03)
+- **New "Wallpaper on all games" switch** in Quick Access. Turn it off and only the games you pick get a wallpaper; every other game (and Home with nothing selected) shows its normal art. A new **Main wallpaper** option puts your baked wallpaper on chosen games. Thanks to MessatsuMaster on Reddit for the idea.
+- **Game pages show Steam's own art.** Opening a game (the page with the Play button) hides the wallpaper; it comes back on Home.
+- **Lighter on battery:** no more full-page rescans on every scroll in the Library or Store while no wallpaper is showing.
+- **More reliable settings:** saving keeps retrying if the plugin's backend is slow, and an unreadable settings file is never overwritten.
+- Fixes: a big video removed while loading no longer stays in memory; the right wallpaper is kept after a restart; the "0 layers mounted" box no longer sticks after you disable the plugin.
+- **Selector:** search (press `/`), grid/list view, a 1-2-3 step guide, a close button on the result card, and a **Feedback** link plus a pre-filled **Report this problem on GitHub** link under any error.
+- **Safer selector:** it only accepts the real Live Wallpaper folder, waits for a running bake before you change folders, never shows an empty library mid-read, and refuses a very large video when no plugin folder is set (instead of risking a browser crash).
+- **Re-bake with the updated selector to get this.** No settings reset. Installing the new zip is optional.
+
 ## v3.2.1 — Smoother scrolling, safer bakes, truly silent web wallpapers (2026-10-12)
 - **The wallpaper now appears right away when you enter Game Mode**, even if Home opens on a tile with no background art (non-Steam shortcuts, emulators, launchers) — no more moving left/right to "wake it up".
 - **No more restart/flicker when scrolling between games.** The wallpaper keeps playing when Steam swaps a game's background art, and identical wallpapers never reload.
