@@ -1,6 +1,17 @@
 # Changelog
 
-## v3.2.2 — Wallpaper only where you want it, cleaner game pages, easier feedback (2026-11-03)
+## v3.2.3 — Live adjusting, web wallpaper polish, debug log (2026-11-04)
+- **Adjust your wallpaper live.** The wallpaper now stays visible while Quick Access is open, so you can watch Dim, Brightness, Zoom and Position change as you move them. (Before, opening Quick Access could make the plugin think another game was selected and hide the wallpaper.)
+- **Web wallpapers can be adjusted too:** Dim, Brightness, Zoom and Position now work on web wallpapers, not just video. (Fit stays video-only.)
+- **Smoother web wallpapers:** lowering Brightness no longer runs an extra filter over the whole page every frame (same look, less work), and a web wallpaper fades in once it has drawn, instead of flashing black while it loads.
+- **Steadier placement:** during Steam's fade between games the wallpaper now lands on the new game's art, not the one fading out, and finding the art takes far less work on each change.
+- **Export debug log:** a new button in Quick Access saves `decky-wall-log.txt` to your Desktop. Attach it to a bug report.
+- **Selector:** "Installing…" / "✓ Installed" / "⚠ Not installed" now shows right on the wallpaper you clicked (the old message was at the bottom of the page), and a **✓ Installed** badge marks your current wallpaper. The moving maze background is smoother, and a **Background** button turns it off.
+- Includes everything from v3.2.2.
+- **Install the new zip** (needed for Export debug log), then **re-bake with the new selector**. No settings reset.
+- Tip: if a game's art goes black for a moment when you move right on Home, check the CSS Loader theme *Art Hero*: its "No Hero" setting causes that, not this plugin.
+
+## v3.2.2 — Wallpaper only where you want it, cleaner game pages, easier feedback (2026-11-03, pulled; ships in v3.2.3)
 - **New "Wallpaper on all games" switch** in Quick Access. Turn it off and only the games you pick get a wallpaper; every other game (and Home with nothing selected) shows its normal art. A new **Main wallpaper** option puts your baked wallpaper on chosen games. Thanks to MessatsuMaster on Reddit for the idea.
 - **Game pages show Steam's own art.** Opening a game (the page with the Play button) hides the wallpaper; it comes back on Home.
 - **Lighter on battery:** no more full-page rescans on every scroll in the Library or Store while no wallpaper is showing.

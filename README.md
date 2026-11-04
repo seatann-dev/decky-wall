@@ -34,7 +34,7 @@
 | **Tested on** | ROG Xbox Ally X (Bazzite): by me · Steam Deck OLED: confirmed by a user · Decky for Windows: reported working by a user, untested by me |
 | **Your files** | Ships no wallpapers. It only bakes ones from *your own* Workshop folder, on your own device. Open source (MIT) |
 
-> **New in v3.2.2:** the wallpaper steps aside on a game's page (Steam's art shows), a **Wallpaper on all games** switch for "only my favourite games", search and list view in the selector, and a one-click **Report a problem** link. [Changelog](./CHANGELOG.md)
+> **New in v3.2.3:** adjust the wallpaper live with Quick Access open, Dim / Brightness / Zoom / Position for web wallpapers too, an **Export debug log** button, and install status right on the wallpaper you click. Also includes v3.2.2: the wallpaper steps aside on a game's page, a **Wallpaper on all games** switch, and search + list view in the selector. [Changelog](./CHANGELOG.md)
 
 ## Quick start
 
@@ -76,7 +76,7 @@ Everything below is in **⋯ Quick Access → Live Wallpaper**. Nothing needs a 
 | Give each game its own wallpaper | See [Per-game wallpapers](#per-game-wallpapers) |
 | Use one wallpaper everywhere (smoothest) | Turn **Per-game wallpapers** off |
 | Show wallpapers only on games I pick | Turn **Wallpaper on all games** off |
-| Adjust the look | Fit, Dim, Brightness, Zoom, Position X/Y, Reset position |
+| Adjust the look (live, with Quick Access open) | Fit (video), Dim, Brightness, Zoom, Position X/Y, Reset position |
 | Turn it off for a moment | **Enabled** toggle |
 | Hide the small status readout | **Status pill** toggle |
 
@@ -103,7 +103,13 @@ A [known Decky Loader bug](https://github.com/SteamDeckHomebrew/decky-loader/iss
 <details>
 <summary><b>No wallpaper shows</b></summary>
 
-Open **Live Wallpaper → Reload wallpaper**. Check **Enabled** is on, and, if you turned **Wallpaper on all games** off, that this game has a wallpaper picked. Still nothing? [Report it](../../issues/new?template=bug_report.yml) with a photo of the screen.
+First time? Make sure you clicked **Use this** in the selector: **＋ Library** only adds a wallpaper to the per-game list and doesn't set your main one. Then open **Live Wallpaper → Reload wallpaper**, check **Enabled** is on, and, if you turned **Wallpaper on all games** off, that this game has a wallpaper picked. Still nothing? Tap **Export debug log** in Quick Access and [report it](../../issues/new?template=bug_report.yml) with `decky-wall-log.txt` from your Desktop.
+</details>
+
+<details>
+<summary><b>Game art flashes black when moving right on Home</b></summary>
+
+That comes from the CSS Loader theme **Art Hero** with *Hero Appearance → No Hero*. Pick another Hero Appearance (for example Full Screen Hero or Wide Hero). It also happens with this plugin turned off.
 </details>
 
 <details>
