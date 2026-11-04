@@ -82,6 +82,8 @@ Everything below is in **⋯ Quick Access → Live Wallpaper**. Nothing needs a 
 
 **Adding new wallpapers** still happens on the desktop: open the selector → **Use this** (your main wallpaper) or **＋ Library** (for per-game use) → back to Game Mode.
 
+**Desktop launcher (optional, Bazzite / SteamOS desktop):** download [`decky-wall-desktop.zip`](../../releases/latest/download/decky-wall-desktop.zip), extract it, put `decky-wall.desktop` on your Desktop and make it executable (right-click → Properties → Permissions → *Is executable*). One click opens the latest selector in Chrome / Brave / Edge; the first click also adds Decky.wall to your app menu with its icon. Right-click it for What's new, Get the latest version and Report a problem.
+
 ## Per-game wallpapers
 
 ![Per-game wallpapers: a different wallpaper behind each game](./Decky.wall_pergame_demo.gif)
