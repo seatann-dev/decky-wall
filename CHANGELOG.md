@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.2.4 — Smoother moves between games (2026-11-04)
+- **No more flash of the game's own art** when you move onto a game that has a wallpaper. The plugin now reacts to the move straight away instead of checking a few times a second.
+- **No flicker with per-game wallpapers.** When Steam swaps in the next game's art, the playing wallpaper moves onto it right away. Before, it stayed on the old art until Steam removed it, then restarted.
+- **Wallpapers resume instantly.** Moving to a game that shows its own art, or opening a game's page, now pauses the wallpaper and keeps it ready for 60 seconds instead of unloading it, so coming back doesn't reload it.
+- **Re-bake with the new selector to get this.** The plugin zip only changes its version number, so reinstalling it is optional if you already have v3.2.3.
+
 ## v3.2.3 — Live adjusting, web wallpaper polish, debug log (2026-11-04)
 - **Adjust your wallpaper live.** The wallpaper now stays visible while Quick Access is open, so you can watch Dim, Brightness, Zoom and Position change as you move them. (Before, opening Quick Access could make the plugin think another game was selected and hide the wallpaper.)
 - **Web wallpapers can be adjusted too:** Dim, Brightness, Zoom and Position now work on web wallpapers, not just video. (Fit stays video-only.)

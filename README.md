@@ -34,7 +34,7 @@
 | **Tested on** | ROG Xbox Ally X (Bazzite): by me · Steam Deck OLED: confirmed by a user · Decky for Windows: reported working by a user, untested by me |
 | **Your files** | Ships no wallpapers. It only bakes ones from *your own* Workshop folder, on your own device. Open source (MIT) |
 
-> **New in v3.2.3:** adjust the wallpaper live with Quick Access open, Dim / Brightness / Zoom / Position for web wallpapers too, an **Export debug log** button, and install status right on the wallpaper you click. Also includes v3.2.2: the wallpaper steps aside on a game's page, a **Wallpaper on all games** switch, and search + list view in the selector. [Changelog](./CHANGELOG.md)
+> **New in v3.2.4:** smoother moves between games: no flash of the game's own art, no flicker with per-game wallpapers, and wallpapers resume instantly. v3.2.3 added live adjusting with Quick Access open, Dim / Brightness / Zoom / Position for web wallpapers, and an **Export debug log** button. [Changelog](./CHANGELOG.md)
 
 ## Quick start
 
