@@ -34,7 +34,7 @@
 | **Tested on** | ROG Xbox Ally X (Bazzite): by me · Steam Deck OLED: confirmed by a user · Decky for Windows: reported working by a user, untested by me |
 | **Your files** | Ships no wallpapers. It only bakes ones from *your own* Workshop folder, on your own device. Open source (MIT) |
 
-> **New in v3.2.4:** smoother moves between games: no flash of the game's own art, no flicker with per-game wallpapers, and wallpapers resume instantly. v3.2.3 added live adjusting with Quick Access open, Dim / Brightness / Zoom / Position for web wallpapers, and an **Export debug log** button. [Changelog](./CHANGELOG.md)
+> **New in v3.2.5:** **Wallpaper on game pages**: the wallpaper can also play on a game's page (the one with Play), with its own position per game. The selector also offers the desktop launcher after an install. v3.2.4 made moves between games smoother (no flash, no flicker, instant resume). v3.2.3 added live adjusting with Quick Access open, Dim / Brightness / Zoom / Position for web wallpapers, and an **Export debug log** button. [Changelog](./CHANGELOG.md)
 
 ## Quick start
 
@@ -76,6 +76,7 @@ Everything below is in **⋯ Quick Access → Live Wallpaper**. Nothing needs a 
 | Give each game its own wallpaper | See [Per-game wallpapers](#per-game-wallpapers) |
 | Use one wallpaper everywhere (smoothest) | Turn **Per-game wallpapers** off |
 | Show wallpapers only on games I pick | Turn **Wallpaper on all games** off |
+| Also show it on a game's page (the one with Play) | Turn **Wallpaper on game pages** on, then use **Game page position** (per game, or the default) to pick which part of the video shows |
 | Adjust the look (live, with Quick Access open) | Fit (video), Dim, Brightness, Zoom, Position X/Y, Reset position |
 | Turn it off for a moment | **Enabled** toggle |
 | Hide the small status readout | **Status pill** toggle |

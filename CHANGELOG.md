@@ -1,5 +1,12 @@
 # Changelog
 
+## v3.2.5 — Wallpaper on game pages (2026-11-05)
+- **New "Wallpaper on game pages" switch** in Quick Access. Turn it on and the wallpaper also plays on a game's page (the one with the Play button), not just on Home. Off by default, so nothing changes unless you want it. Thanks to MessatsuMaster on Reddit for asking.
+- **Game page position:** a game's page shows a wide strip of art, so a slider picks which part of the video shows there (top, middle, bottom). Each game can keep its own position; games without one use the default slider. **Use default for this game** removes a game's own position. Video wallpapers only.
+- Home's Zoom and Position are not used on game pages (they are set for the full screen). Dim and Brightness still are.
+- **Selector:** after a successful install on a Linux desktop, a small box offers the Decky.wall desktop launcher (one-click icon for the selector). It asks once: **Get launcher** or **No thanks** is remembered.
+- **Re-bake with the new selector to get this.** No settings reset. Installing the new zip is optional (only its version number and engine changed).
+
 ## v3.2.4 — Smoother moves between games (2026-11-04)
 - **No more flash of the game's own art** when you move onto a game that has a wallpaper. The plugin now reacts to the move straight away instead of checking a few times a second.
 - **No flicker with per-game wallpapers.** When Steam swaps in the next game's art, the playing wallpaper moves onto it right away. Before, it stayed on the old art until Steam removed it, then restarted.
